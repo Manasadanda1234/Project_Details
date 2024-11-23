@@ -1,0 +1,554 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  .container {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(228, 161, 16, 0.801);
+    display: flex;
+    justify-content: space-around;
+  }
+  .nav-right {
+    margin-top: 30px;
+  }
+  .another-container {
+    height: 100%;
+    width: 100%;
+  }
+  
+  ul li {
+    display: inline;
+    list-style-type: none;
+    margin: 35px;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: emoji;
+    color: red;
+  }
+  
+  .logo {
+    width: 90px;
+    height: 90px;
+    margin-top: 4PX;
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+.About-heading {
+  font-size: 30px;
+  color: blue;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.box1 {
+    width: 280px;
+    height: 280px;
+    margin: 15px;
+}
+.box2 {
+    width: 280px;
+    height: 280px;
+    margin: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 15px;
+}
+.flex-heading1 {
+  color: palevioletred;
+}
+.flex-paragraph1 {
+  color: rgb(233, 139, 17);
+  padding-top: 15px;
+  padding-bottom: 12px;
+  line-height: 1.3;
+  font-size: 18px;
+  
+}
+.button {
+  width: 80px;
+  height: 30px;
+  color: rgb(179, 7, 179);
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.box3 {
+    width: 280px;
+    height: 280px;
+    margin: 15px;
+}
+.box4 {
+    width: 280px;
+    height: 280px;
+    margin: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 15px;
+    color: palevioletred;
+}
+.button2 {
+  width: 80px;
+  height: 30px;
+  color: rgb(179, 7, 179);
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 70px;
+}
+
+.box5 {
+    width: 280px;
+    height: 280px;
+    margin: 15px;
+    
+}
+.box6 {
+    width: 280px;
+    height: 280px;
+    margin: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 15px;
+    color: palevioletred;
+}
+.button3 {
+  width: 80px;
+  height: 30px;
+  color: rgb(179, 7, 179);
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 90px;
+}
+.box7 {
+    width: 280px;
+    height: 280px;
+    margin: 15px;
+   
+}
+.box8 {
+    width: 280px;
+    height: 280px;
+    margin: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 15px;
+    color: rgb(202, 90, 127);
+}
+.button4 {
+  width: 80px;
+  height: 30px;
+  color: rgb(179, 7, 179);
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 90px;
+}
+.image1 {
+    height: 100%;
+}
+.image2 {
+  height: 100%;
+  width: 100%;
+}
+.image3 {
+  height: 100%;
+  width: 100%;
+}
+.image4 {
+  height: 100%;
+  width: 100%;
+}
+.medical-container {
+  background-color: rgba(238, 232, 170, 0.651);
+  height: 100%;
+}
+.medical-list {
+  margin-left: 60px;
+  font-size: 27px;
+  line-height: 1.8;
+  color: rgb(50, 71, 8);
+  padding-top: 30px;
+}
+.contact-container {
+  background-image: url(./HCS\ background\ image.jpg);
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  position: absolute;
+}
+.contact-box{
+  width: 900px;
+  height: 300px;
+  background-color: white;
+  margin-left: 280px;
+  margin-top: 40px;
+}
+.contact-logo1 {
+  width: 60px;
+  height: 60px;
+  margin-left: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.contact-heading1 {
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  color: yellowgreen;
+  margin-left: 23px;
+
+}
+.contact-paragraph1 {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(235, 15, 45);
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.contact-flex {
+  display: flex;
+  justify-content: space-around;
+}
+.contact-logo2 {
+  width: 60px;
+  height: 60px;
+  margin-left: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.contact-heading2 {
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  color: yellowgreen;
+  margin-left: 23px;
+
+}
+.contact-paragraph2 {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(235, 15, 45);
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.contact-logo3 {
+  width: 60px;
+  height: 60px;
+  margin-left: 70px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.contact-heading3 {
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  color: yellowgreen;
+  margin-left: 60px;
+
+}
+.contact-paragraph3 {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(235, 15, 45);
+  margin-left: px;
+  margin-top: 15px;
+}
+.main-heading {
+  text-align: center;
+  padding: 20px;
+  color: rgb(69, 27, 185);
+  
+}
+.form1 {
+  padding-left: 270px;
+}
+.subject {
+  margin-left: 370px;
+  margin-top: 20px;
+  
+}
+.enter_firstname {
+  margin-right: 20px;
+}
+.form2 {
+  margin-left: 335px;
+  height: 50px;
+  width: 250px;
+}
+.sub-button {
+  margin-left: 410px;
+  margin-top: 20px;
+  width: 100px;
+  height: 20px;
+}
+.register-container {
+  background-image: url(./HCS\ background\ image.jpg);
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  position: fixed;
+}
+.register-box {
+  width: 400px;
+  height: 500px;
+  background-color: papayawhip;
+  margin-left: 470px;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+.register-heading {
+  font-size: 35px;
+  color: yellowgreen;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 18px;
+  
+}
+.label_reg {
+  width: 200px;
+  color: blueviolet;
+  margin-left: 90px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.firstname{
+  width: 250px;
+  height: 30px;
+  margin-left: 90px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.lastname{
+  width: 250px;
+  height: 30px;
+  margin-left: 90px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+
+}
+.enter_email{
+  width: 250px;
+  height: 30px;
+  margin-left: 90px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.password{
+  width: 250px;
+  height: 30px;
+  margin-left: 90px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+}
+.register-Sign {
+  width: 100px;
+  height: 30px;
+  margin-left: 90px;
+  margin-right: 20px;
+  background-color: yellow;
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid rgb(94, 11, 94);
+  border-radius: 10px;
+}
+.register-login {
+  width: 100px;
+  height: 30px;
+  background-color: yellow;
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid rgb(94, 11, 94);
+  border-radius: 10px;
+}
+.login-container {
+  background-image: url(./HCS\ background\ image.jpg);
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  position: fixed;
+}
+.login-box {
+  width: 400px;
+  height: 400px;
+  background-color: papayawhip;
+  margin-left: 470px;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+.login-heading {
+  font-size: 35px;
+  color: yellowgreen;
+  text-align: center;
+  padding-top: 15px;
+}
+.login-paragraph {
+  font-size: 20px;
+  color: rgb(230, 20, 118);
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 18px;
+}
+.button-login {
+  width: 110px;
+  height: 40px;
+  background-color: yellow;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid rgb(94, 11, 94);
+  border-radius: 10px;
+  margin-left: 150px;
+  margin-top: 20px;
+}
+.Appointment-container {
+  background-image: url(./HCS\ background\ image.jpg);
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  position: absolute;
+}
+.Appointment-box {
+  width: 800px;
+  height: 600px;
+  background-color: papayawhip;
+  margin-left: 320px;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+.Appointment-heading {
+  font-size: 35px;
+  color: yellowgreen;
+  text-align: center;
+  padding-top: 15px;
+}
+.Appointment-heading1 {
+  font-size: 35px;
+  color: rgb(133, 194, 11);
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.label {
+  display: inline-block;
+  width: 350px;
+  font-size: 25px;
+  color: orangered;
+  margin-left: 130px;
+}
+.patient {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.date {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.patient_issue {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.option1 {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.option2 {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.Visit_Date {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.Email {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.mobile_number {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.button-book {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  color: crimson;
+  margin-left: 310px;
+  margin-top: 25px;
+  font-weight: bold;
+  background-color: darkgray;
+  border-radius: 10px;
+}
+.Appointment-paragraph {
+  font-size: 23px;
+  color: firebrick;
+  text-align: center;
+  padding-bottom: 25px;
+}
+.label1 {
+  display: inline-block;
+  width: 300px;
+  font-size: 25px;
+  color: black;
+  margin-left: 130px;
+}
+.Appointment-box1 {
+  width: 800px;
+  height: 500px;
+  background-color: papayawhip;
+  margin-left: 320px;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+.Branch {
+  width: 200px;
+  height: 25px;
+}
+.Name {
+  width: 200px;
+  height: 25px;
+}
+.Doctor_Specialist {
+  width: 200px;
+  height: 25px;
+}
+.Visit {
+  width: 200px;
+  height: 25px;
+}
+.Medical_issue {
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}

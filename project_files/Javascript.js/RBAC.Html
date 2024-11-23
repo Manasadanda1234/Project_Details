@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBAC UI</title>
+    <style>
+        /* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 30px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    background-color: #f1f1f1;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+#access-message {
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Role-Based Access Control (RBAC) UI</h1>
+        </header>
+
+        <section id="role-management">
+            <h2>Role Management</h2>
+            <input type="text" id="role-name" placeholder="Enter new role name" />
+            <button onclick="addRole()">Add Role</button>
+
+            <ul id="role-list">
+                <!-- Roles will be listed here -->
+            </ul>
+        </section>
+
+        <section id="user-management">
+            <h2>User Management</h2>
+            <input type="text" id="username" placeholder="Enter username" />
+            <select id="role-select">
+                <option disabled selected>Select role</option>
+                <!-- Dynamic role options will be added here -->
+            </select>
+            <button onclick="assignRoleToUser()">Assign Role to User</button>
+
+            <ul id="user-list">
+                <!-- Users with roles will be listed here -->
+            </ul>
+        </section>
+
+        <section id="access-control">
+            <h2>Access Control</h2>
+            <button onclick="checkAccess()">Check Access</button>
+            <p id="access-message"></p>
+        </section>
+    </div>
+
+    <script>
+        // Arrays to hold roles and users
+let roles = [];
+let users = [];
+
+// Function to add a new role
+function addRole() {
+    const roleName = document.getElementById('role-name').value;
+    if (roleName && !roles.includes(roleName)) {
+        roles.push(roleName);
+        updateRoleList();
+        updateRoleSelect();
+        document.getElementById('role-name').value = '';
+    } else {
+        alert('Role name is either empty or already exists.');
+    }
+}
+
+// Function to update the role list in the UI
+function updateRoleList() {
+    const roleList = document.getElementById('role-list');
+    roleList.innerHTML = ''; // Clear the list
+    roles.forEach(role => {
+        const li = document.createElement('li');
+        li.textContent = role;
+        roleList.appendChild(li);
+    });
+}
+
+// Function to update the role select dropdown for user assignment
+function updateRoleSelect() {
+    const roleSelect = document.getElementById('role-select');
+    roleSelect.innerHTML = '<option disabled selected>Select role</option>'; // Reset options
+    roles.forEach(role => {
+        const option = document.createElement('option');
+        option.value = role;
+        option.textContent = role;
+        roleSelect.appendChild(option);
+    });
+}
+
+// Function to assign a role to a user
+function assignRoleToUser() {
+    const username = document.getElementById('username').value;
+    const roleSelect = document.getElementById('role-select');
+    const selectedRole = roleSelect.value;
+
+    if (username && selectedRole) {
+        const user = { username, role: selectedRole };
+        users.push(user);
+        updateUserList();
+        document.getElementById('username').value = '';
+        roleSelect.value = '';
+    } else {
+        alert('Please enter a username and select a role.');
+    }
+}
+
+// Function to update the user list in the UI
+function updateUserList() {
+    const userList = document.getElementById('user-list');
+    userList.innerHTML = ''; // Clear the list
+    users.forEach(user => {
+        const li = document.createElement('li');
+        li.textContent = `${user.username} - Role: ${user.role}`;
+        userList.appendChild(li);
+    });
+}
+
+// Function to check access for a user (basic logic)
+function checkAccess() {
+    const username = prompt('Enter username to check access:');
+    const user = users.find(u => u.username === username);
+
+    const accessMessage = document.getElementById('access-message');
+    if (user) {
+        accessMessage.textContent = `${user.username} has access with role: ${user.role}`;
+    } else {
+        accessMessage.textContent = 'User not found.';
+    }
+}
+
+    </script>
+</body>
+</html>

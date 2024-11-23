@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Grocery container</title>
+    <style>
+        .bg-container {
+            background-color: #3a6781;
+            width: 400px;
+            height: 600px;
+            margin-left: 500px;
+            border-radius: 10px;
+        }
+
+        .heading {
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .list-container {
+            background-color: white;
+            width: 300px;
+            height: 200px;
+            margin-left: 30px;
+            border-radius: 10px;
+            padding-top: 12px;
+
+        }
+
+        .list-items {
+            font-size: 20px;
+            padding: 2px;
+        }
+
+        .input-text {
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .label-text {
+            margin-left: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .button-container {
+            background-color: rgb(9, 209, 35);
+            width: 130px;
+            height: 40px;
+            border: 2px solid red;
+            color: black;
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transform: scale(3s);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let bgContainerEl = document.createElement("div");
+        bgContainerEl.classList.add("bg-container");
+        document.body.appendChild(bgContainerEl);
+
+        let h1Element = document.createElement("h1");
+        h1Element.textContent = "Grocery List";
+        h1Element.classList.add("heading");
+        bgContainerEl.appendChild(h1Element);
+
+        let listContainerEl = document.createElement("ul");
+        listContainerEl.classList.add("list-container");
+        bgContainerEl.appendChild(listContainerEl);
+
+        let groceryItems = ["Milk", "Peanut Butter", "Choco Chips", "Tomoto Sauce", "Cup Cakes", "Noodles"];
+        for (groceryItem of groceryItems) {
+            let listItemEl = document.createElement("li");
+            listItemEl.classList.add("list-items");
+            listItemEl.textContent = groceryItem;
+            listContainerEl.appendChild(listItemEl);
+        }
+
+        let inputEl = document.createElement("input");
+        inputEl.type = "checkbox";
+        inputEl.id = "demo";
+        inputEl.classList.add("input-text");
+        bgContainerEl.appendChild(inputEl);
+
+        let labelEl = document.createElement("label");
+        labelEl.setAttribute("for", "demo");
+        labelEl.classList.add("label-text");
+        labelEl.textContent = "Need Home Delivery";
+        bgContainerEl.appendChild(labelEl);
+
+        let brEl = document.createElement("br");
+        bgContainerEl.appendChild(brEl);
+
+        let btnEl = document.createElement("button");
+        btnEl.classList.add("button-container");
+        bgContainerEl.appendChild(btnEl);
+        
+        let btnE2 = document.createElement("a");
+        btnE2.setAttribute("href", "https://www.phonepe.com/");
+        btnE2.setAttribute("target", "_blank");
+        btnE2.textContent = "Proceed To Pay";
+        btnE2.style.textDecoration = "none";
+        btnEl.appendChild(btnE2);
+    </script>
+</body>
+
+</html>

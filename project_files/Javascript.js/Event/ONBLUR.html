@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONBLUR</title>
+</head>
+
+<body>
+    Enter your Name: <input type="text" id="fname" onFocus="myFocusFunc(event)">
+    <p>This is a paragraph</p>
+    <select onchange="mySelectFunc(event)" onFocus="myFocusFunc(event)">
+        <option value="op1">op1</option>
+        <option value="op2">op2</option>
+        <option value="op3">op3</option>
+    </select>
+    <script>
+        function myFunction() {
+            var char = document.getElementById("fname");
+            char.value = char.value.toUpperCase();
+        }
+        function myBlurFunc() {
+            console.log("Blur Triggered");
+        }
+        function myFocusFunc(event) {
+            console.log("Focus Triggered:", event.target.value);
+        }
+        function myChangeFunc(event) {
+            console.log("Input Change Triggered:", event.target.value);
+        }
+
+        function mySelectFunc(event) {
+            console.log("Selected Option:", event.target.value);
+        }
+
+    </script>
+</body>
+
+</html>

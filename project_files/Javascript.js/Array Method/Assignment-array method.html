@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Method</title>
+</head>
+<body>
+    <h1 id="header">Old Heading</h1>
+    <p id="para">Paragraph</p>
+    <ul id="list"></ul>
+    <script>
+        /*document.createElement("root")
+        var string = ["Css","Html","Javascript","React"];
+        var result = string.map(function(element,index) {
+
+        });
+        console.log(result);*/
+
+        const myHeader = document.getElementById('header');
+        myHeader.addEventListener('click', () => {
+            myHeader.textContent = "New Heading";
+        })
+        console.log(myHeader);
+    </script>
+</body>
+</html>

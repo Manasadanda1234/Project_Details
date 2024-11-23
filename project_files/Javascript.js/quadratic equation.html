@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // quadratic equation
+        let a = parseInt(prompt("Enter a Number = "))
+        let b = parseInt(prompt("Enter a Number = "))
+        let c = parseInt(prompt("Enter a Number = "))
+   
+   let x = b * b - 4 * a * c;
+   let root1;
+   let root2; 
+    if (x > 0) {
+        root1 = (-b + Math.sqrt(x)) / (2 * a);
+        root2 = (-b - Math.sqrt(x)) / (2 * a);
+        console.log(`The roots of quadratic Equation ${root1} and ${root2}`)
+    }
+    else if (x = 0) {
+        root1 = root2 = -b/ (2 * a);
+        console.log(`The roots of quadratic Equation ${root1} and ${root2}`)
+    }
+    else {
+    let realpart = (-b / (2 * a)).toFixed(2);
+    let imaginary = (Math.sqrt(x)).toFixed(2);
+    console.log(`The roots of quadratic Equation ${realpart} and ${imaginary}`)
+    }
+    
+    </script>
+</body>
+</html>

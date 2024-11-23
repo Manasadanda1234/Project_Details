@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+    
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            cursor: pointer;
+            background-image: radial-gradient(orange,rgba(76, 0, 255, 0.692),rgba(26, 226, 26, 0.527),rgba(255, 255, 0, 0.822));
+            
+        }
+        .para {
+            font-size: 35px;
+            padding: 30px;
+            font-weight: bold;
+        }
+        * {
+            margin: 0px;
+        }
+        .button {
+            cursor: pointer;
+        }
+        .button1 {
+            cursor: pointer;
+            width: 80px;
+            height: 35px;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: yellowgreen;
+            color: white;
+            font-size: 18px;
+            border: 2px solid black;
+            font-weight: 100;
+        }
+        .button2 {
+            cursor: pointer;
+            width: 80px;
+            height: 35px;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: red;
+            color: white;
+            font-size: 18px;
+            border: 2px solid black;
+            font-weight: 100;
+        }
+        .button3 {
+            cursor: pointer;
+            width: 80px;
+            height: 35px;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: rgb(0, 4, 255);
+            color: white;
+            font-size: 18px;
+            border: 2px solid black;
+            font-weight: 100;
+        }
+        .heading {
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <div class="main-container">
+    <h1 class="heading">Stop Watch</h1>
+    <p class="para" id = "time">00:00</p>
+    <div class="button">
+     <button class="button1 id = "Start" onclick="startCounter()">Start</button>
+     <button class="button2 id = "Stop" onclick="stopCounter()">Stop</button>
+     <button class="button3 id = "reset" onclick="resetCounter()">Reset</button>
+    </div>
+</div>
+</div>
+<script>
+    sessionStorage.setItem("counter",0);
+    let startTime;
+    
+    function loadUI(counter) {
+        document.getElementById("value").textContent = counter
+    }
+    
+    function startCounter() {
+        let counter = sessionStorage.getItem("counter");
+        const updatedCounter = Number(counter) + 1
+        sessionStorage.setItem("counter",updatedCounter);
+        loadUI(updatedCounter)
+        var startTime = new Date()
+        var min = Date.getminutes()
+        var sec = Date.getseconds()
+    }
+
+    function stopCounter() {
+        let counter = sessionStorage.getItem("counter");
+        const updatedCounter = Number(counter) - 1
+        sessionStorage.setItem("counter",updatedCounter);
+        loadUI(updatedCounter)
+        var startTime = new Date()
+        var min = Date.getminutes()
+        var sec = Date.getseconds()
+        
+    }
+    function resetCounter() {
+        let counter = sessionStorage.getItem("counter");
+        const updatedCounter = Number(counter) = 0
+        sessionStorage.setItem("counter",updatedCounter);
+        loadUI(updatedCounter)
+        document.getElementById(reset)
+        var startTime = new Date()
+        var min = Date.getminutes()
+        var sec = Date.getseconds()
+    }
+</script>
+</body>
+</html>

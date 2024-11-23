@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery with Lightbox</title>
+    <style>
+        /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Gallery container */
+.gallery-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Gallery grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+    margin-bottom: 20px;
+}
+
+/* Lightbox Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ddd;
+}
+
+/* Lightbox Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    #lightbox-img {
+        max-width: 95%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <h1>My Photo Gallery</h1>
+        <div class="gallery">
+            <img src="image1.jpg" alt="Photo 1" class="gallery-item">
+            <img src="image2.jpg" alt="Photo 2" class="gallery-item">
+            <img src="image3.jpg" alt="Photo 3" class="gallery-item">
+            <img src="image4.jpg" alt="Photo 4" class="gallery-item">
+            <img src="image5.jpg" alt="Photo 5" class="gallery-item">
+            <img src="image6.jpg" alt="Photo 6" class="gallery-item">
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span id="close-lightbox" class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+        <div id="lightbox-controls" class="controls">
+            <button id="prev-btn">Prev</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <script>// Get all gallery items and the lightbox elements
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeLightbox = document.getElementById('close-lightbox');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        // To track the current image index
+        let currentImageIndex = 0;
+        
+        // Function to open the lightbox
+        function openLightbox(index) {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = galleryItems[index].src;
+            currentImageIndex = index;
+        }
+        
+        // Function to close the lightbox
+        function closeLightboxFn() {
+            lightbox.style.display = 'none';
+        }
+        
+        // Event listener to open lightbox on image click
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+        
+        // Event listener to close lightbox
+        closeLightbox.addEventListener('click', closeLightboxFn);
+        
+        // Event listeners for Next and Previous buttons
+        prevBtn.addEventListener('click', () => {
+            if (currentImageIndex === 0) {
+                currentImageIndex = galleryItems.length - 1;
+            } else {
+                currentImageIndex--;
+            }
+            lightboxImg.src = galleryItems[currentImageIndex].src;
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentImageIndex === galleryItems.length - 1) {
+                currentImageIndex = 0;
+            } else {
+                currentImageIndex++;
+            }
+            lightboxImg.src = galleryItems[currentImageIndex].src;
+        });
+        
+        // Event listener to close lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightboxFn();
+            }
+        });
+        </script>
+</body>
+</html>

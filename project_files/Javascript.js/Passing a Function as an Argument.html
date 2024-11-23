@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passing a Function as an Argument</title>
+</head>
+<body>
+    <script>
+        function displayGreeting(displayName) {
+            console.log("Hello");
+            displayName();
+            console.log("Good Morning");
+        }
+        displayGreeting(function(){
+            console.log("Manasa");
+        });
+    </script>
+</body>
+</html>

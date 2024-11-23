@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Open And Window Close</title>
+</head>
+<body>
+    <button onclick="openHandler()">Onclick</button>
+    <button onclick="CloseHandler()">Onclose</button>
+    <script>
+        var input;
+        function openHandler() {
+            input = window.open("https://www.flipkart.com/big-billion-day-store?param=2793&s_kwcid=AL!739!3!676201929245!b!!g!!flipkart&gclsrc=aw.ds&&semcmpid=sem_8024046704_brand_exe_buyers_goog&gad_source=1&gclid=Cj0KCQjwjNS3BhChARIsAOxBM6qR-qxcLbSDds8d8NtDd47qcBkM5EPQPlTCUdt4UBW_FKUxc5AI5JkaAjPfEALw_wcB")
+        }
+        function CloseHandler() {
+            input.close();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>TODO</title>
+    <style>
+        .todo-main-container {
+            background-color: #d8dfeb;
+            height: 100vh;
+        }
+
+        .todo-main-heading {
+            text-align: center;
+            font-family: "Roboto";
+            font-size: 46px;
+            font-weight: 500;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sub-todo-heading {
+            font-weight: bold;
+        }
+
+        .span-heading {
+            font-weight: 400;
+        }
+
+        .todo-user-input {
+            background-color: white;
+            width: 100%;
+            border: 1px solid burlywood;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .button {
+            background-color: #4c63b6;
+            color: white;
+            font-family: "Roboto";
+            font-size: 18px;
+            border-width: 0px;
+            border-radius: 5px;
+            margin-top: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 40px;
+        }
+
+        .todo-span-items-heading {
+            font-weight: 400;
+
+        }
+
+        .save-button {
+            background-color: #4c63b6;
+            color: white;
+            font-family: "Roboto";
+            font-size: 18px;
+            border-width: 0px;
+            border-radius: 5px;
+            margin-top: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 40px;
+        }
+
+        .todo-items-container {
+            margin-top: 15px;
+            list-style-type: none;
+            padding: 0px;
+        }
+
+        .todo-item-container {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+        }
+
+        .icon {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-color: red;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="todo-main-container">
+        <div class="heading-container">
+            <h1 class="todo-main-heading">Todos</h1>
+            <h1 class="sub-todo-heading">Create
+                <span class="span-heading">Task</span>
+            </h1>
+            <input type="text" id="todoUserInput" class="todo-user-input" placeholder="Whats needs to bo done?" />
+            <br />
+            <button class="button" id="addButton">Add</button>
+            <h1 class="todo-items-heading">My
+                <span class="todo-span-items-heading">Tasks</span>
+            </h1>
+            <ul class="todo-items-container" id="todoItemsContainer"></ul>
+            <button class="save-button" id="saveButton">Save</button>
+        </div>
+    </div>
+    <script>
+        let todoItemsContainerEl = document.getElementById("todoItemsContainer");
+        let addButtonEl = document.getElementById("addButton");
+        let saveButtonEl = document.getElementById("saveButton");
+
+        saveButton.onclick = function() {
+            localStorage.setItem("todoList", JSON.stringify(todoList));
+        }
+
+        function getTodoListFromLocalStorage(){
+            let stringifiedTodoList = localStorage.getItem("todoList");
+            let parsedTodoList = JSON.parse(stringifiedTodoList);
+            if(parsedTodoList === Null) {
+                return [];
+            }
+            else {
+                return parsedTodoList;
+            }
+        }
+
+        let todoList = getTodoListFromLocalStorage();
+        let todosCount = todoList.length;
+
+
+        function onTodoStatusChange(checkboxId, labelId) {
+            let checkboxEl = document.getElementById("checkboxId");
+            let labelEl = document.getElementById("labelId");
+
+            labelEl.classList.toggle("checked");
+        }
+
+        function onDeleteTodo(todoId) {
+            let todoElement = document.getElementById("todoId");
+            todoItemsContainer.removeChild(todoElement);
+        }
+
+        function createAndAppendTodo(todo) {
+
+            let todoId = "todo" + todo.uniqueNo;
+            let checkboxId = "check" + todo.uniqueNo;
+            let labelId = "label" + todo.uniqueNo;
+
+            let todoElement = document.createElement("li");
+            todoElement.classList.add("todo-item-container");
+            todoElement.id = todoId;
+            todoItemsContainerEl.appendChild(todoElement);
+
+            let inputElement = document.createElement("input");
+            inputElement.type = "checkbox";
+            inputElement.id = "checkBoxInput";
+
+            inputElement.onclick = function() {
+                onTodoStatusChange(checkboxId, labelId);
+
+            }
+
+            inputElement.classList.add("input-element");
+            todoElement.appendChild(inputElement);
+
+            let lableContainer = document.createElement("div");
+            lableContainer.classList.add("label-container");
+            todoElement.appendChild(lableContainer);
+
+            let labelElement = document.createElement("label");
+            labelElement.setAttribute("for", checkboxId);
+            labelElement.id = labelId;
+            labelElement.classList.add("checkbox-label");
+            labelElement.textContent = todo.text;
+            lableContainer.appendChild(labelElement);
+
+            let deleteIconContainer = document.createElement("div");
+            deleteIconContainer.classList.add("delete-icon-container");
+            lableContainer.appendChild(deleteIconContainer);
+
+
+            let deleteIcon = document.createElement("i");
+            deleteIcon.classList.add("far", "fa-trash-alt", "delete-icon");
+
+            deleteIcon.onclick = function() {
+                onDeleteTodo(todoId);
+
+            }
+    
+            deleteIconContainer.appendChild(deleteIcon);
+            
+        };
+
+        for (let todo of todoList) {
+            createAndAppendTodo(todo);
+        }
+
+        function onAddTodo() {
+            let userInputElement = document.getElementById("todoUserInput");
+            userInputValue = userInputElement.value;
+
+
+            if(userInputValue === "") {
+                alert("Enter a Valid Text");
+                return;
+            }
+
+            todosCount = todosCount + 1;
+
+            let newTodo = {
+                text: userInputValue,
+                uniqueNo: todosCount
+            };
+            todoList.push(newTodo);
+
+            createAndAppendTodo(newTodo);
+            userInputElement.value = "";
+
+        }
+
+        addButton.onclick = function() {
+            onAddTodo();
+        };
+
+
+    
+        
+    </script>
+</body>
+
+</html>

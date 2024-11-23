@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Arrays Method</title>
+</head>
+
+<body>
+    <div>
+        <h1>My List:</h1>
+        <ul id="mylist">
+        </ul>
+    </div>
+    <script>
+        var list = [10, 2, 24, 45, 55, 18, 88, 98, 68];
+        console.log("Actual Array", list);
+        var result = list.map(function (input) {
+            return input += 10;
+        });
+        console.log("New Array", result);
+
+        const myList = document.getElementById("mylist");
+
+        list.map(eachValue => {
+            const myOption = document.createElement("li");
+
+            myOption.textContent = eachValue
+            myList.append(myOption);
+        });
+
+
+    </script>
+</body>
+
+</html>

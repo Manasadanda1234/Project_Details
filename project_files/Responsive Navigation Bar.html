@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Responsive Navigation Bar</title>
+        <style>
+         
+
+body {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 20px;
+}
+
+.navbar-logo {
+  color: #fff;
+  font-size: 20px;
+}
+.navbar-menu {
+    display: flex;
+    list-style: none;
+}
+.navbar-menu li {
+    margin-left: 10px;
+}
+.navbar-menu a {
+    color: aqua;
+    text-decoration: none;
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    .navbar-menu {
+        position: absolute;
+        background-color: salmon;
+    }
+}
+
+    </style>
+    </head>
+    <body>
+        <nav class="navbar">
+          <div class="navbar-logo">Logo</div>
+          <ul class="navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </body>
+</html>

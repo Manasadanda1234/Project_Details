@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>days left</title>
+</head>
+<body>
+    <script>
+        let today = new Date();
+        console.log(today);
+        let year = today.getFullYear();
+        console.log(year);
+        let christmas = new Date(year, 11, 25);
+        console.log(christmas);
+        let days = christmas-today;
+        console.log(days);
+        let daysLeft = Math.ceil(days/(1000*60*60*24));
+        console.log(`There are ${daysLeft} days left for Christmas`);
+    </script>
+</body>
+</html>

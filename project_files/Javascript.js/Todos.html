@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+    <style>
+        .todos-bg-container {
+            background-color: #3a6781;
+            height: 600px;
+            width: 400px;
+            margin-left: 500px;
+            border-radius: 10px;
+
+        }
+
+        .todos-heading {
+            font-family: "Roboto";
+            font-size: 46px;
+            font-weight: 500;
+            text-align: center;
+            color: white;
+        }
+
+        .task-heading {
+            font-family: "Roboto";
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            color: white;
+        }
+
+        .task-heading-subpart {
+            font-family: "Roboto";
+            font-family: 32px;
+            font-weight: 500;
+        }
+
+        .todo-input {
+            width: 300px;
+            height: 50px;
+            margin-left: 35px;
+            border-radius: 10px;
+            padding-left: 20px;
+            color: black;
+            font-size: 16px;
+        }
+
+        .todo-button {
+            width: 80px;
+            height: 35px;
+            background-image: linear-gradient(red, yellow);
+            ;
+            font-size: 18px;
+            font-weight: 300;
+            margin-top: 20px;
+            margin-left: 35px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .todo-my-task {
+            color: black;
+            font-weight: 700;
+            margin-left: 35px;
+
+        }
+
+        .todo-my-task-subpart {
+            color: black;
+            font-weight: 400;
+
+        }
+
+        .learn-html1 {
+            width: 20px;
+            height: 20px;
+            margin-left: 35px;
+        }
+
+        .learn-html2 {
+            width: 200px;
+            height: 20px;
+            border-left: 3px solid red;
+            border-radius: 5px;
+        }
+
+        .todo-item-container {
+            display: flex;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="todos-bg-container">
+        <h1 class="todos-heading">Todos</h1>
+        <h1 class="task-heading">Create <span class="task-heading-subpart">Task</span></h1>
+        <input type="text" class="todo-input" placeholder="What needs to be done!" id="myTask">
+        <button class="todo-button" onclick="storeTask()">Add</button>
+        <h1 class="todo-my-task">My <span class="todo-my-task-subpart">Tasks</span></h1>
+
+        <input type="checkbox" class="learn-html1" placeholder="Learn HTML">
+        <input id="task" type="text" class="learn-html2" placeholder="Learn HTML">
+        <label class="learn-html2" for="task">Learn HTML</label>
+    </div>
+
+
+
+    <script>
+        let myData = []
+        let todoItemsContainer = document.createElement("ul");
+
+        function loadWebpage() {
+
+
+            myData.forEach(eachData => {
+                let todoElement = document.createElement("li");
+                todoElement.classList.add("todo-item-container");
+                todoElement.textContent = eachData.value
+                todoElement.setAttribute('key', eachData.id)
+                todoItemsContainer.appendChild(todoElement);
+
+            })
+
+
+        }
+
+
+        function storeTask() {
+            const myTask = document.getElementById("myTask").value;
+            myData.push({
+                id: myData.length + 1,
+                value: myTask
+            })
+
+            console.log(myData)
+            loadWebpage()
+        }
+
+
+    </script>
+</body>
+
+</html>

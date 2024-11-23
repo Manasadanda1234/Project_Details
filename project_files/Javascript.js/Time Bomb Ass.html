@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Bomb</title>
+    <style>
+        .timer-container {
+           background-color: #00bafc;
+           padding: 20px;
+           text-align: center;
+           height: 100vh;
+        }
+        .timer-display {
+           color: white;
+           font-size: 50px;
+        }
+        .user-input {
+            text-align: center;
+            border-width: 0px;
+            border-radius: 4px;
+            padding: 6px;
+            padding-top: 20px;
+        }
+        .bomb-image {
+            width: 200px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="timer-container">
+        <input type="text" class="user-input" id="defuser" /><br/>
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/time-bomb-img.png" class="bomb-image">
+        <p class="timer-display" id="timer">10</p>
+
+    </div>
+    <script>
+       let timerEl = document.getElementById("timer");
+       let defuserEl = document.getElementById("defuser");
+
+       let countdown = 10;
+
+    let intervalId = setInterval(function() {
+    countdown = countdown - 1;
+    timerEl.textContent = countdown;
+    if (countdown === 0) {
+    timerEl.textContent = "BOOM!...";
+    clearInterval(intervalId);
+  }
+}, 1000);
+
+    defuserEl.addEventListener("keydown", function(event) {
+    let bombDefuserText = defuserEl.value;
+    if (event.key === "Enter" && bombDefuserText === "defuser" && countdown !== 0) {
+        defuserEl.textContent = "You did it!";
+    clearInterval(intervalId);
+  }
+});
+    </script>
+</body>
+</html>

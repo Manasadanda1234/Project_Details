@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Dom modal</title>
+</head>
+<body>
+    <h1>This is a main heading</h1>
+    <p>This is paragraph</p>
+    <button onclick="showDialog()">Show Dialog</button>
+    <dialog id="showDialog" style="color: green;">Welcome to GeeksforGeeks </dialog>
+    <script>
+        var x = document.getElementById("showDialog");
+        function showDialog() {
+            x.showModal();
+
+        }
+    </script>
+</body>
+</html>

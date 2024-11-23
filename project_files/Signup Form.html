@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Signup Form</title>
+        <style>
+            body {
+                border: 2px solid black;
+                width: 500px;
+                height: 350px;
+                padding-left: 40px;
+                padding-top: 40px;
+                border-radius: 5px;
+            }
+             .label_reg {
+                display: inline-block;
+                width: 200px;
+                margin: 10px;
+                font-size: 20px;
+             }
+            .username {
+                width: 200px;
+            }
+            .email{
+                width: 200px;
+            }
+            .password{
+                width: 200px;
+            }
+            .button {
+                margin-left: 30px;
+                margin-top: 10px;
+                width: 70px;
+                height: 30px;
+                border: 2px solid black;
+                border-radius: 5px;
+                background-color: rgb(43, 226, 211);
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Signup Form</h1>
+    
+        <form>
+            <label class="label_reg" for="username">Username:</label>
+            <input type="text" id="username" placeholder="Username" name="username" required minlength="3" maxlength="20"><br>
+    
+            <label class="label_reg" for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email" name="email" required><br>
+    
+            <label class="label_reg" for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password" name="password" required minlength="6"><br>
+    
+            <input class="button" type="submit" value="Sign Up">
+        </form>
+    
+    </body>
+</html>

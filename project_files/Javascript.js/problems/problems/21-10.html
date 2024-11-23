@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World </title>
+  <style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        background-color: bisque;
+        margin-top: 50px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: yellowgreen;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    button:hover {
+        background-color: rgb(106, 62, 146);
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <button id="createHelloWorld">Click Me</button>
+
+
+
+  <script>
+    function createHelloWorld() {
+        return function() {
+       return "Hello World"
+        }
+    }
+  </script>
+</body>
+</html>

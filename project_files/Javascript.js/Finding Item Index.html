@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Item Index</title>
+</head>
+<body>
+    <script>
+        let myArray = [5,12,8,130,44];
+        let itemIndex = myArray.some(function(eachItem) {
+            if (eachItem === 130) {
+                return true;
+            }
+            else { 
+                return false;
+            }
+            console.log(eachItem);
+        });
+        console.log(itemIndex);
+        
+    </script>
+
+
+
+</body>
+</html>

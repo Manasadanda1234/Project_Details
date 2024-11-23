@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Login Page:-</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: antiquewhite;
+            }
+            .container {
+                background-color: rgba(255, 0, 0, 0.856);
+                padding: 40px;
+                border-radius: 8px;
+                box-shadow: 0 7px 10px yellow;
+                width: 300px;
+                text-align: center;
+            }
+            h1 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+            .sub-container {
+                position: relative;
+                margin-bottom: 20px;
+            }
+            .sub-container input {
+                width: 100%;
+                padding: 10px;
+                margin: 5px;
+                display: block;
+                border: 2px solid rgb(2, 2, 15);
+                border-radius: 4px;
+                background: none;
+            }
+            .login-btn {
+                background-color: rgb(104, 56, 148);
+                color: azure;
+                border: none;
+                font-size: 15px;
+                padding: 10px;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Login Page</h1>
+            <form>
+        <div class="sub-container">
+            <label for="username">
+                Username:-
+            </label>
+            <input type="text" id="username" placeholder="Username" name="Username" required><br><br>
+        </div>
+        <div class="sub-container">
+            <label for="Password">
+                Password:-
+            </label>
+            <input type="text" id="Password" placeholder="Password" name="Password" required><br><br>
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </body>
+</html>

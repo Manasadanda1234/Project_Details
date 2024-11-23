@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let timerId = setInterval(printName, 1000);
+
+let count = 3
+
+function printName(){
+    count += 1
+    console.log("Manasa")
+    if(count === 5){
+        clearInterval(timerId)
+    }
+}
+    </script>
+</body>
+</html>

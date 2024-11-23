@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0px;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .stopwatch {
+            color: white;
+            text-align: center;
+        }
+        .time {
+            font-size: 40px;
+            margin: 20px;
+        }
+        .button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+           
+        }
+        #start {
+            color: white;
+            background-color: rgb(11, 173, 11);
+            width: 90px;
+            height: 40px;
+            font-size: 25px;
+            margin: 5px;
+            border-radius: 7px;
+            border: none;
+        }
+        #stop {
+            color: white;
+            background-color: red;
+            width: 80px;
+            height: 40px;
+            font-size: 25px;
+            margin: 5px;
+            border-radius: 7px;
+            border: none;
+            
+        }
+        #reset {
+            color: white;
+            background-color: rgb(48, 155, 197);
+            width: 80px;
+            height: 40px;
+            border: none;
+            font-size: 25px;
+            margin: 5px;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stopwatch">
+       <h1 class="heading">Stopwatch</h1>
+       <div class="time" id="time">00:00:00</div>
+       <div class="button">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+       </div>
+    </div>
+    <script>
+        let timer;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+        const display = document.getElementById("time")
+        const startButton = document.getElementById("start")
+        const stopButton = document.getElementById("stop")
+        const resetButton = document.getElementById("reset")
+        function updateDisplay() {
+            const format = (num) => (num < 10 ? `0${num}` : num);
+            display.textContent = `${format(hours)}:${format(minutes)}:${format(seconds)}`;
+        }
+        function startStopwatch() {
+            timer = setInterval(() => {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+                updateDisplay();
+            },1000);
+        }
+        function stopStopwatch() {
+            clearInterval(timer);
+        }
+        function resetStopwatch() {
+            clearInterval(timer);
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            updateDisplay();
+        }
+        startButton.addEventListener('click' ,startStopwatch);
+        stopButton.addEventListener('click' ,stopStopwatch);
+        resetButton.addEventListener('click' ,resetStopwatch);
+    </script>
+</body>
+</html>

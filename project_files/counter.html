@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Counter</title>
+    <style>
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(174deg, #99f795, #a9eff1);
+        }
+
+        .btns {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .btn {
+            padding: 5px 12px;
+            cursor: pointer;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            transform: scale 3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .dec {
+            background-color: coral;
+        }
+
+        .inc {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Counter:</h1>
+        <p id="value">0</p>
+        <div class="btns">
+            <button id="decrement" onclick="decreaseCounter()" class="btn dec">Decrease</button>
+            <button id="increment" onclick="increaseCounter()" class="btn inc">Increase</button>
+        </div>
+    </div>
+    <script>
+        sessionStorage.setItem("counter", 0);
+
+        function loadUI(counter) {
+            document.getElementById("value").textContent = counter
+        }
+
+        function decreaseCounter() {
+            let counter = sessionStorage.getItem("counter");
+            const updatedCounter = Number(counter) - 1
+            sessionStorage.setItem("counter", updatedCounter);
+            loadUI(updatedCounter)
+        }
+
+        function increaseCounter() {
+            let counter = sessionStorage.getItem("counter");
+            const updatedCounter = Number(counter) + 1
+            sessionStorage.setItem("counter", updatedCounter);
+            loadUI(updatedCounter)
+        }
+
+    </script>
+</body>
+
+</html>

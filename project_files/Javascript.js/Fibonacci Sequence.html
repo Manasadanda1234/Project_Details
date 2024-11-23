@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Fibonacci Sequance//
+let series = [0, 1]
+
+for (let i=3; i<=10; i++){
+    lastindex1 = series.length-1
+    lastindex2 = series.length-2
+    let result = series[lastindex1] + series[lastindex2]
+    series.push(result);
+}
+
+console.log(series.join(' '))
+    </script>
+</body>
+</html>

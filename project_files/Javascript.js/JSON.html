@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        let profile = {
+            name : "Manasa",
+            age : 21,
+            designation : "Web Developer"
+        };
+        let stringfiedProfile = JSON.stringify(profile);
+        console.log(stringfiedProfile);
+        console.log(typeof(stringfiedProfile));
+
+        localStorage.setItem("profileDetails" , JSON.stringify(profile));
+        let stringfiedProfileDetails = localStorage.getItem("profileDetails");
+        console.log(stringfiedProfileDetails);
+    </script>
+</body>
+</html>

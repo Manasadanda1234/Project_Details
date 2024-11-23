@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .heading {
+  color: rgb(238, 29, 98);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 35px;
+  text-decoration: none;
+  font-weight: 500;
+  
+}
+    </style>
+</head>
+<body>
+    <div id="demo">
+
+    </div>
+    <script>
+        let h1Element = document.createElement("h1");
+        h1Element.textContent = "Good Morning Manasa";
+        
+        
+        let containerElement = document.getElementById("demo")
+        containerElement.appendChild(h1Element);
+
+        
+        let btnElement = document.createElement("button");
+        btnElement.textContent = 'change heading and add styles';
+        containerElement.appendChild(btnElement);
+
+        btnElement.onclick = function() {
+        h1Element.textContent = "Good Evening Ammulu";
+        h1Element.classList.add("heading");
+        };
+
+        let removeStylesBtnElement = document.createElement("button");
+        removeStylesBtnElement.textContent = "Remove Styles";
+        containerElement.appendChild(removeStylesBtnElement);
+        
+        removeStylesBtnElement.onclick = function() {
+        h1Element.classList.remove("heading");     
+        };
+    </script>
+</body>
+</html>

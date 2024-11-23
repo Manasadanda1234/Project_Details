@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pricing Table</title>
+        <style>
+           
+            .pricing-table {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            .plan {
+                background-color: #fff;
+                border-radius: 10px;
+                border: 1px solid black;
+                padding: 20px;
+                width: 300px;
+                text-align: center;
+            }
+            .plan h2 {
+                font-size: 24px;
+                color: #333;
+            }
+            .price {
+                font-size: 36px;
+                color: #007bff;
+                margin: 10px ;
+            }
+            .features {
+                list-style: none;
+                padding: 0;
+                margin: 20px ;
+                font-size: 16px;
+            }
+            .features li {
+                margin: 10px ;
+                
+                
+            }
+            .sign-up {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="pricing-table">
+            <div class="plan">
+                <h2>Basic Plan</h2>
+                <div class="price">$9.99/month</div>
+                <ul class="features">
+                    <li>10 GB Storage</li>
+                    <li>100 Emails</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <a href="#" class="sign-up">Sign Up</a>
+            </div>
+    
+            <div class="plan best-value">
+                <h2>Pro Plan</h2>
+                <div class="price">$19.99/month</div>
+                <ul class="features">
+                    <li>50 GB Storage</li>
+                    <li>500 Emails</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#" class="sign-up">Sign Up</a>
+            </div>
+    
+            <div class="plan">
+                <h2>Enterprise Plan</h2>
+                <div class="price">$49.99/month</div>
+                <ul class="features">
+                    <li>Unlimited Storage</li>
+                    <li>Unlimited Emails</li>
+                    <li>Dedicated Support</li>
+                </ul>
+                <a href="#" class="sign-up">Sign Up</a>
+            </div>
+        </div>
+    </body>
+</html>

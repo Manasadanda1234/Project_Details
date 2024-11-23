@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Style a Contact Form:</title>
+        <style>
+           .label_reg {
+                display: inline-block;
+                width: 200px;
+                margin-left: 25px;
+            }
+            .name{
+                width: 200px;
+                font-style: italic;
+                border: 1px solid black;
+            }
+            .email{
+                width: 200px;
+                font-style: italic;
+                border: 1px solid black;
+            }
+            .message{
+                width: 200px;
+                font-style: italic;
+                border: 1px solid black;
+            }
+            .box {
+                width: 500px;
+                height: 300px;
+                border: 1px solid black;
+                font-weight: bold;
+                background-color: bisque;
+            }
+            .heading {
+                margin-left: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1 class="heading">Contact Form</h1>
+        <form action="sumbit.html">
+    <label class="label_reg">
+    Name:-
+    </label>
+<input class="name" placeholder="Name" type="text" name="Name"><br><br>
+<label class="label_reg">
+    Email:-
+    </label>
+<input class="email" placeholder="Email" type="text" name="email"><br><br>
+<label class="label_reg">
+    Message:-
+    </label>
+<textarea class="message" placeholder="Message" type="text" name="message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </body>
+</html>

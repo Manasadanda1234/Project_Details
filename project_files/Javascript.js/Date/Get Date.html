@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Date</title>
+</head>
+<body>
+    <script>
+        var char = new Date ();
+        console.log(char.getTime());
+        console.log(char.getFullYear());
+        console.log(char.getMonth()+1);
+        var months = ["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+        console.log(months[char.getMonth()]);
+        console.log(char.getDate());
+        console.log(char.getHours());
+        console.log(char.getMinutes());
+        console.log(char.getDay());
+    </script>
+</body>
+</html>

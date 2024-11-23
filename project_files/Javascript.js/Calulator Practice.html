@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+           align-items: center;
+            margin-top: 200px;
+            
+           
+        }
+        .calculator  {
+            background-color: bisque;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px brown;
+            text-align: center;
+            
+        }
+        input {
+            width: 100px;
+            margin: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            border: none;
+            background-color: greenyellow;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: brown;
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+    <h1>Simple Calculator</h1>
+    <input id="num1" type="number" placeholder="Enter First Number">
+    <input id="num2" type="number" placeholder="Enter second Number"><br/>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <button onclick="clearFeilds()">Clear</button>
+    <p id="result">Result: </p>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+       
+        let result;
+
+        if(isNaN(num1) || isNaN(num2)) {
+            result = "Please Enter a Valid Number!";
+        }
+        else {
+            switch(operation) {
+                case '+' :
+                    result = num1 + num2;
+                    break;
+                    case '-' :
+                    result = num1 - num2;
+                    break;
+                    case '*' :
+                    result = num1 * num2;
+                    break;
+                    case '/' :
+                    result = (num2 === 0)? 'cannot divide by Zero!' : num1/num2;
+                    break;
+                    default:
+                        result = 'Invalid Operation!';
+            }
+        }
+        document.getElementById('result').textContent = `Result: ${result}`;
+    }
+    function clearFeilds() {
+        document.getElementById("num1").value = '';
+        document.getElementById("num2").value = '';
+        document.getElementById("result").textContent = 'Result: ';
+    }
+    </script>
+</body>
+</html>

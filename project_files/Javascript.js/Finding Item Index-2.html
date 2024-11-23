@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Item Index2</title>
+
+</head>
+<body>
+    <script>
+    let customerData = [
+    {
+        name : "Manasa",
+        id :101
+    },
+    {
+        name : "Madhavi",
+        id : 102
+    },
+    {
+        name : "Ammulu",
+        id : 103
+    }
+    ];
+    let itemIndex = customerData.findIndex(function(eachItem) {
+        if (eachItem.id === 102) {
+            return true;
+        }
+        else { 
+            return false
+        }
+    
+       
+    });
+    console.log(itemIndex);
+</script>
+</body>
+</html>

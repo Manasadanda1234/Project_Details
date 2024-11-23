@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Testimonials Card:</title>
+        <style>
+            * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: wheat;
+    padding: 20px;
+}
+
+.testimonials {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    background-color: papayawhip;
+    border-radius: 8px;
+}
+.testimonials h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+.testimonial-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-left: 4px solid #007bff;
+    border-right: 4px solid #007bff;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    position: relative;
+}
+.testimonial-card .message {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 10px;
+}
+.testimonial-card .director {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.testimonial-card::before {
+    content: '“';
+    font-size: 50px;
+    color: #007bff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-family: 'Georgia', serif;
+}
+
+.testimonial-card::after {
+    content: '”';
+    font-size: 50px;
+    color: #007bff;
+    position: absolute;
+    bottom: -20px;
+    right: 0px;
+    font-family: 'Georgia', serif;
+}
+
+        </style>
+    </head>
+    <body>
+        <section class="testimonials">
+            <h2>Movie Message and Director Name</h2>
+            <div class="testimonial-card">
+                <p class="message">"The central theme is that of an uprising, standing up and showing courage in the face of tyrannical rule. Set in 1920s colonial India, Komaram Bheem (N.T. Rama Rao Jr.)!"</p>
+                <p class="director">- S. S. Rajamouli.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="message">"Overall, the message of Baahubali is one of selflessness, bravery, and perseverance in the face of adversity."</p>
+                <p class="director">- S. S. Rajamouli.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="message">"The 2009 movie Magadheera is about a warrior who is reincarnated 400 years after trying to save a princess and kingdom, which also die with him. He then fights against all odds to win back his love. "</p>
+                <p class="director">- S. S. Rajamouli.</p>
+            </div>
+        </section>
+    </body
+</html>
